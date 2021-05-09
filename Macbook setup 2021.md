@@ -111,6 +111,11 @@
     $ npm i -g chalet mup
     $ curl https://install.meteor.com/ | sh
     ```
+  - npm custom registry
+    ```bash
+    $ npm login --registry http://nexus.productive.me/repository/npm
+    $ npm config set @productiveme:registry http://nexus.productive.me/repository/npm
+    ```
   - Docker
     ```bash
     $ brew install docker
