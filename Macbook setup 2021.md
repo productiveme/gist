@@ -113,7 +113,7 @@
     ```
   - npm custom registry
     ```bash
-    $ npm login --registry http://nexus.productive.me/repository/npm
+    $ npm login --scope=@productiveme --always-auth --registry http://nexus.productive.me/repository/npm
     $ npm config set @productiveme:registry http://nexus.productive.me/repository/npm
     ```
   - Docker
