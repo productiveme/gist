@@ -2,7 +2,7 @@
 - Install brew package manager  
   `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - Install iTerm2  
-  `$ brew install --cask iterm2 `
+  `$ brew install --cask iterm2`
 - Hammerspoon for window management, password generation  
   `$ brew install --cask hammerspoon`
   - Config
@@ -85,6 +85,8 @@
     ```
 - Install communication apps
   - `$ brew install --cask slack zoom discord`
+- Install vpn
+  - `$ brew install --cask tunnelblick`
 - Install development apps
   - Install XCode 12.4 (for Catalina) or latest (for Big Sur)  
     > Download at: https://developer.apple.com/xcode/download/  
@@ -101,6 +103,8 @@
     $ pyenv global 3.7.3
     $ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
     ```
+  - Install java. 
+    `$ brew install --cask adoptopenjdk`
   - [Install Flutter](https://flutter.dev/docs/get-started/install/macos)
   - Flutter dependencies  
     `$ brew install --cask android-studio google-chrome`  
