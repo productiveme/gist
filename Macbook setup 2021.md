@@ -114,6 +114,7 @@
     $ brew install node
     $ npm i -g chalet mup
     $ curl https://install.meteor.com/ | sh
+    $ npm install -g git-removed-branches
     ```
   - npm custom registry
     ```bash
