@@ -112,9 +112,8 @@
   - NodeJS and helpers
     ```bash
     $ brew install node
-    $ npm i -g chalet mup
+    $ npm i -g chalet mup git-removed-branches
     $ curl https://install.meteor.com/ | sh
-    $ npm install -g git-removed-branches
     ```
   - npm custom registry
     ```bash
