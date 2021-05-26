@@ -125,7 +125,7 @@
     $ brew install docker
     $ brew install --cask docker
     ```
-    Handy for documentation and mindmapping  
+  - Handy for documentation and mindmapping  
     `$ brew install --cask typora workflowy obsidian licecap`
   - Browser for developers - comparing devices  
     `$ brew install --cask blisk`
