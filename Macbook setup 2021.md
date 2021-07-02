@@ -31,8 +31,8 @@
       hs.alert.show("Allowing Sleep")
     end)
     ```
-- Terminal setup
-  - Install zsh with zinit and pure-prompt
+- Terminal setup 
+  - Install zsh with zinit and pure-prompt (requires node, see later on)
     ```bash
     $ chsh -s /bin/zsh
     $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
@@ -122,7 +122,6 @@
     ```
   - Docker
     ```bash
-    $ brew install docker
     $ brew install --cask docker
     ```
   - Handy for documentation and mindmapping  
