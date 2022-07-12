@@ -103,6 +103,12 @@
     ```bash
     $ brew install --cask docker
     ```
-  - Handy for documentation and mindmapping  
-    `$ brew install --cask workflowy licecap`
+  - Handy tools for 
+      - documentation 
+        `$ brew install --cask workflowy licecap xmind`
+      - security
+        `$ brew install --cask bitwarden tunnelblick`
+      - design
+        `$ brew install --cask inkscape gimp`
+
 
