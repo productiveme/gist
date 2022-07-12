@@ -1,36 +1,17 @@
-# Macbook Setup 2021
+# Macbook Setup 2022
 - Install brew package manager  
   `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - Install iTerm2  
   `$ brew install --cask iterm2`
-- Hammerspoon for window management, password generation  
-  `$ brew install --cask hammerspoon`
-  - Config
-    ```lua
-    -- https://github.com/peterklijn/hammerspoon-shiftit/raw/master/Spoons/ShiftIt.spoon.zip
-    hs.loadSpoon("ShiftIt")
-    spoon.ShiftIt:bindHotkeys({})
-    -- https://github.com/Hammerspoon/Spoons/raw/master/Spoons/PasswordGenerator.spoon.zip
-    hs.loadSpoon("PasswordGenerator")
-    spoon.PasswordGenerator.password_style="xkcd"
-    spoon.PasswordGenerator.word_count=4
-    spoon.PasswordGenerator.word_leet=2
-    spoon.PasswordGenerator:bindHotkeys({
-      copy = { { "ctrl", "cmd", "alt" }, "p" }
-    })
-    hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "I", function()
-      hs.caffeinate.set("displayIdle", true, true)
-      hs.caffeinate.set("systemIdle", true, true)
-      hs.caffeinate.set("system", true, true)
-      hs.alert.show("Preventing Sleep")
-    end)
-    hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "O", function()
-      hs.caffeinate.set("displayIdle", false, true)
-      hs.caffeinate.set("systemIdle", false, true)
-      hs.caffeinate.set("system", false, true)
-      hs.alert.show("Allowing Sleep")
-    end)
+- Raycast for window management, password generation  
+  `$ brew install --cask raycast`
+  - Password generator extension
     ```
+    git clone git@github.com:productiveme/raycast-ext-passphrase-generator.git passphrase
+    cd passphrase
+    npm i && npm run dev
+    ```
+  - Import [config](Raycast.rayconfig)
 - Terminal setup 
   - Install zsh with zinit and pure-prompt (requires node, see later on)
     ```bash
@@ -72,11 +53,9 @@
   - Some aliases in ~/.zprofile -- **NOTE: replace with your own ~/project path**
     ```bash
     alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;'
-    alias gf='function _goldfinger(){ (cd ~/project; sh goldfinger.sh $1 $2) }; _goldfinger'
     alias pwdenv='read -sr OS_PWD && export OS_PWD'
-    alias scpb='scp -i ~/.ssh/bolt_id_rsa'
-    alias sshb='ssh -i ~/.ssh/bolt_id_rsa'
-    alias typora='open -a typora'
+    alias rosetta='function _rosetta(){ arch -x86_64 $@ }; _rosetta'
+    alias jsonc='function _jsonc(){ (for i in $@; do :; done; code $i && jsoncalc $@) }; _jsonc'
     ```
   - Git aliases  
     ```bash
@@ -88,7 +67,7 @@
 - Install vpn
   - `$ brew install --cask tunnelblick`
 - Install development apps
-  - Install XCode 12.4 (for Catalina) or latest (for Big Sur)  
+  - Install XCode  
     > Download at: https://developer.apple.com/xcode/download/  
     > Or install Xcode via the App Store (https://apps.apple.com/za/app/xcode/id497799835?mt=12)  
     > Once installed, run:  
@@ -111,8 +90,9 @@
     `$ sudo gem install cocoapods`
   - NodeJS and helpers
     ```bash
-    $ brew install node
-    $ npm i -g chalet mup git-removed-branches
+    $ brew install nvm
+    $ nvm install node
+    $ npm i -g chalet mup git-removed-branches jsoncalc
     $ curl https://install.meteor.com/ | sh
     ```
   - npm custom registry
@@ -125,6 +105,5 @@
     $ brew install --cask docker
     ```
   - Handy for documentation and mindmapping  
-    `$ brew install --cask typora workflowy obsidian licecap`
-  - Browser for developers - comparing devices  
-    `$ brew install --cask blisk`
+    `$ brew install --cask workflowy licecap`
+
