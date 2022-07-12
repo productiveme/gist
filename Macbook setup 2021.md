@@ -11,7 +11,6 @@
     cd passphrase
     npm i && npm run dev
     ```
-  - Import [config](Raycast.rayconfig)
 - Terminal setup 
   - Install zsh with zinit and pure-prompt (requires node, see later on)
     ```bash
