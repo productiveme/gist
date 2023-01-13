@@ -1,37 +1,32 @@
 # Macbook Setup 2022
-
 - Install brew package manager  
-  `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+    `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - Install iTerm2  
-  `$ brew install --cask iterm2`
+    `$ brew install --cask iterm2`
 - Raycast for window management, password generation  
-  `$ brew install --cask raycast`
-  - Password generator extension
+    `$ brew install --cask raycast`
+- NodeJS and helpers
+    ```bash
+    $ brew install nvm
+    $ nvm install node
+    ```
+- Password generator extension for raycast
     ```
     git clone git@github.com:productiveme/raycast-ext-passphrase-generator.git passphrase
     cd passphrase
     npm i && npm run dev
     ```
-- Install node
-  ```bash
-  $ brew install nvm # follow instructions at the bottom of the output
-  $ nvm install node
-  ```    
 
 - Terminal setup 
-  - Install zsh with zinit and pure-prompt (requires node, see later on)
+  - Install zsh with zinit 
     ```bash
-    $ chsh -s /bin/zsh
-    $ bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)" # then reload the shell
+    $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
     $ zinit self-update
-    $ npm install --global pure-prompt
+
     $ cat >> ~/.zshrc
     ```
   - Paste the following (Ctrl-D when you've pasted to finalize the file)
     ```bash
-    zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-    zinit light sindresorhus/pure
-    
     zinit wait lucid for \
      atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
         zdharma/fast-syntax-highlighting \
@@ -39,16 +34,13 @@
         zsh-users/zsh-completions \
      atload"!_zsh_autosuggest_start" \
         zsh-users/zsh-autosuggestions
-    
     HISTSIZE=1000
     HISTFILE=~/.zsh_history
     SAVEHIST=200
     setopt appendhistory
     setopt sharehistory
     setopt incappendhistory
-    
     # Key bindings: (find the codes with `cat` and pressing key)
-    
     # alt-right-arrow
     bindkey "^[^[[C" forward-word
     # alt-left-arrow
@@ -60,7 +52,7 @@
     # end-key
     bindkey "^[[F" end-of-line"
     ```
-  - Some aliases in ~/.zprofile
+  - Some aliases in ~/.zprofile -- **NOTE: replace with your own ~/project path**
     ```bash
     alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;'
     alias pwdenv='read -sr OS_PWD && export OS_PWD'
@@ -72,10 +64,14 @@
     $ git config --global alias.up "push -u origin HEAD"
     $ git config --global alias.graph "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
     ```
+- Install some npm global tools
+    ```bash
+    $ npm i -g git-removed-branches jsoncalc meteor
+    ```
 - Install communication apps
-  - `$ brew install --cask slack zoom`
+  - `$ brew install --cask slack`
 - Install vpn
-  - `$ brew install --cask tunnelblick`
+  - `$ brew install wireguard-tools`
 - Install development apps
   - Install XCode  
     > Download at: https://developer.apple.com/xcode/download/  
@@ -83,54 +79,36 @@
     > Once installed, run:  
     > `$ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer`   
     > `$ sudo xcodebuild -runFirstLaunch`
-
   - IDE and tools  
-    `$ brew install --cask visual-studio-code azure-data-studio postman`
-    
+    `$ brew install --cask visual-studio-code azure-data-studio`
   - Install python 3
-  ```bash
+    ```bash
     $ brew install pyenv
-    $ pyenv install 3.9.9
-    $ pyenv global 3.9.9
+    $ pyenv install 3.7.3
+    $ pyenv global 3.7.3
     $ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
     ```
-    
   - Install java. 
-    `$ brew install --cask adoptopenjdk`
-    
+    `$ brew install --cask temurin8`
   - [Install Flutter](https://flutter.dev/docs/get-started/install/macos)
-  ```bash
-  brew install --cask flutter
-  ```
- 
   - Flutter dependencies  
     `$ brew install --cask android-studio google-chrome`  
     `$ sudo gem install cocoapods`
-    
-  - NodeJS helpers
-    ```bash
-    $ npm i -g chalet mup git-removed-branches jsoncalc
-    $ curl https://install.meteor.com/ | sh
-    ```
     
   - npm custom registry
     ```bash
     $ npm login --scope=@productiveme --always-auth --registry http://nexus.productive.me/repository/npm
     $ npm config set @productiveme:registry http://nexus.productive.me/repository/npm
     ```
-    
   - Docker
     ```bash
-    $ brew install docker
     $ brew install --cask docker
     ```
-    
   - Handy tools for 
       - documentation 
-        `$ brew install --cask workflowy licecap xmind`
+        `$ brew install --cask workflowy licecap`
       - security
-        `$ brew install --cask bitwarden tunnelblick`
+        `$ brew install --cask bitwarden`
       - design
         `$ brew install --cask inkscape gimp`
-
 
