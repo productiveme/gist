@@ -70,8 +70,6 @@
     ```
 - Install communication apps
   - `$ brew install --cask slack`
-- Install vpn
-  - `$ brew install wireguard-tools`
 - Install development apps
   - Install XCode  
     > Download at: https://developer.apple.com/xcode/download/  
@@ -109,6 +107,7 @@
         `$ brew install --cask workflowy licecap`
       - security
         `$ brew install --cask bitwarden`
+        `$ brew install wireguard-tools` or install from [App Store](https://itunes.apple.com/us/app/wireguard/id1451685025?ls=1&mt=12)
       - design
         `$ brew install --cask inkscape gimp`
 
