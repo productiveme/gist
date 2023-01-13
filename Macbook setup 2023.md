@@ -1,4 +1,4 @@
-# Macbook Setup 2022
+# Macbook Setup 2023
 - Install brew package manager  
     `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - Install iTerm2  
